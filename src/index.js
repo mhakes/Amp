@@ -1,10 +1,14 @@
+/* jshint esversion: 10 */
 import "./styles.css";
+import amp from "./amp.js";
+console.clear();
+const cl = (...args) => console.log(...args);
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+const myMath = function myMath() {};
+amp(myMath);
+const even = (v) => Number.isSafeInteger(v) && v % 2 === 0;
+myMath.quick("even", even);
+const arr = [1, 2, "x", [], 3, 4, {}, 5, "y", 6];
+const r = myMath.quickEven(arr);
+cl(r);
+cl(Object.keys(r).length);
